@@ -1,0 +1,381 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: Plus;
+  src: url(/Assets/PlusJakartaSans-Regular.ttf);
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(/Assets/Montserrat-Light.ttf);
+}
+
+header {
+  width: 100%;
+  background: #04053f;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 100px;
+  position: fixed;
+  z-index: 100;
+  border-bottom: 1px solid #222;
+}
+
+header > a {
+  text-decoration: none;
+  color: #ffff;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  font-family: Plus;
+}
+
+header #search {
+  padding: 0.8rem;
+  width: 50%;
+  /* max-width: 600px; */
+  border-radius: 5px;
+  border: 1px solid #333;
+  outline: none;
+  font-family: Montserrat;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 10px;
+    gap: 20px;
+    position: fixed;
+  }
+
+  header > a {
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    font-family: Plus;
+  }
+
+  header #search {
+    width: 80%;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+}
+
+.cryptotracker-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem 0;
+  min-height: 100vh;
+}
+
+.crypto-list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2rem 0rem;
+  gap: 2rem;
+}
+
+.price-up {
+  color: green;
+  font-weight: bold;
+}
+
+.price-down {
+  color: red;
+  font-weight: bold;
+}
+
+.crypto-card {
+   border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 8px;
+  max-width: 200px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  transition: transform 0.4s ease-in-out;
+  position: relative; 
+  overflow: hidden;  
+  line-height: 1.4rem;
+}
+
+.crypto-card:hover {
+  transform: scale(1.05);
+  box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+  background: #fff;
+}
+
+.crypto-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  width: 0;
+  background-color: #04053f;
+  transition: width 0.4s ease-in-out;
+  border-radius: 2px 2px 0 0;
+  z-index: 2;
+}
+
+.crypto-card:hover::after {
+  width: 100%;
+}
+
+.crypto-card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+
+.crypto-card > h3 {
+  font-family: Plus;
+  font-size: 1rem;
+}
+
+.crypto-card:hover > h3 {
+  color: #04053f;
+  cursor: pointer;
+}
+
+.crypto-card > p {
+  font-family: Montserrat;
+  font-size: 1rem;
+  color: #444;
+}
+
+#testimonials {
+  width: 100%;
+  padding: 20px 100px;
+}
+.testimonial-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 1rem;
+  gap: 2rem;
+}
+
+.testimonial {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  width: 300px;
+  flex: 0 0 auto;
+  font-style: italic;
+  line-height: 1.6rem;
+  font-family: Montserrat;
+}
+
+@media screen and (max-width: 768px) {
+  #testimonials {
+    width: 100%;
+    padding: 20px 10px;
+  }
+  .testimonial-container {
+    display: flex;
+    overflow-x: auto;
+    padding: 1rem;
+    gap: 2rem;
+  }
+
+  .testimonial {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    width: 200px;
+    flex: 0 0 auto;
+    font-style: italic;
+    line-height: 1.3rem;
+    font-family: Montserrat;
+  }
+}
+
+footer {
+  width: 100%;
+  background: #04053f;
+  color: white;
+  font-family: Montserrat;
+  padding: 2rem 5rem 0;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+  min-height: 200px;
+  margin: auto;
+  padding-bottom: 1rem;
+}
+
+.footer-container > div {
+  flex: 1 1 200px;
+  gap: 2rem;
+  font-family: Montserrat;
+}
+
+.footer-container > .footer-brand {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4rem;
+}
+.footer-brand h3 {
+  font-family: Plus;
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.footer-links > h4 {
+  font-family: Plus;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.footer-contact > h4 {
+  font-family: Plus;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.footer-social > h4 {
+  font-family: Plus;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.2rem;
+}
+
+.footer-links li {
+  margin: 0.5rem 0;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-contact p {
+  margin: 0.5rem 0;
+  font-family: Montserrat;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  footer {
+    width: 100%;
+    padding: 2rem 10px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .footer-container > div {
+    width: 100%;
+    flex: none;
+  }
+
+  .footer-container > .footer-brand {
+    width: 100%;
+    gap: 1px;
+  }
+
+  .footer-brand h3 {
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    text-align: center;
+  }
+
+  .footer-brand p {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .footer-links > h4 {
+    font-family: Plus;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  .footer-contact > h4 {
+    font-family: Plus;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+  .footer-social > h4 {
+    font-family: Plus;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    line-height: 1.2rem;
+  }
+
+  .footer-links li {
+    margin: 0rem 0;
+    font-size: 0.8rem;
+  }
+
+  .footer-links a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .footer-contact p {
+    margin: 0.2rem 0;
+    font-family: Montserrat;
+    font-size: 0.8rem;
+  }
+
+  .footer-social > p {
+    margin: 0.2rem 0;
+    font-family: Montserrat;
+    font-size: 0.8rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.9rem;
+    padding-top: 1rem;
+  }
+}
